@@ -1,0 +1,619 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Protest+Riot&display=swap');
+
+html{
+  scroll-behavior: smooth;
+}
+
+@media screen and (width>500px){
+    :root{
+      --movementtime:5s;
+    }
+    *{
+      font-family: 'Poppins', sans-serif;
+      /* font-family: 'Protest Riot', sans-serif; */
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        /* background:rgba(79, 76, 76, 0.851)00; */
+        padding: 0%;
+        margin: 0%;
+    }
+    .navbar{
+        position: static;
+        z-index: 10;
+        margin: 0;
+        overflow: auto;
+        background: #000;
+        padding: 10px 0 10px 0;
+        position: static;
+        width: 100vw;
+    }
+   
+    .navbar>ul{
+        display: flex;
+        justify-content: space-evenly;
+
+
+    }
+    .navbar li>a{
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+    }
+    .navbar li{
+        list-style: none;
+    }
+
+    .navbar a:hover{
+        text-decoration: underline;
+    }
+
+    .dropdown{
+      color: white;
+      position: absolute;
+      padding: 15px 30px 15px 30px;
+      background: black;
+      width: 150px;
+      left: 32%;
+      text-align: center;
+      display: none;
+    }
+    .dropdown li{
+      margin-top: 5px;
+    }
+
+    
+
+    /* --------------------intro------------------ */
+    .intro{
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background-image: url("./assests/pexels-garrett-morrow-1649771.jpg");
+        background-position: center;
+        background-size: cover;
+        overflow: hidden;
+    }
+    
+    
+    
+    .intro h1{
+        text-align: center;
+        margin-top: 7%;
+        font-size: 130px;
+        color: #737171;
+       animation-name: fromleft;
+       animation-duration:var(--movementtime);
+       transition: all var(--movementtime);
+       animation-timeline: onview(10px);
+    }
+    .intro h2{
+        text-align: center;
+        margin-top: 5%;
+        font-size: 70px;
+        color: #737171;
+        animation-name: fromright;
+        animation-duration:var(--movementtime);
+        transition: all var(--movementtime);
+    }
+    
+
+    @keyframes fromright {
+      0%{
+        transform: translateX(-100%);
+        color: #000;
+      }
+      100%{
+        transform: translateX(0%);
+        color: #737171;
+      }
+      
+    }
+
+    @keyframes fromleft {
+      0%{
+        transform: translateX(100%);
+        color: #000;
+      }
+      100%{
+        transform: translateX(0%);
+        color: #737171;
+      }
+      
+    }
+
+   
+   
+
+
+
+    /* carousel */
+   
+      
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(calc(-250px * 7));
+        }
+      }
+      
+      .slider {
+        background: white;
+        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+        height: 150px;
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+        width: 100vw;
+      }
+      
+      .slider::before,
+      .slider::after {
+        content: "";
+        height: 100px;
+        position: absolute;
+        width: 200px;
+        z-index: 2;
+      }
+      
+      .slider::after {
+        right: 0;
+        top: 0;
+        transform: rotateZ(180deg);
+      }
+      
+      .slider::before {
+        left: 0;
+        top: 0;
+      }
+      
+      .slider .slide-track {
+        animation: scroll 40s linear infinite;
+        display: flex;
+        width: calc(250px * 14);
+      }
+      
+      .slider .slide {
+        height: 100px;
+        width: 350px;
+        padding: 15px;
+      }
+
+    /* product container 1 */
+    .intro1{
+      width: 99vw;
+      height: 100vh;
+      background-image: url("./assests/wirelessstereobg.jpg");
+      background-position: center;
+      background-size: cover;
+      text-align: center;
+      overflow: auto;
+    }
+
+    .intro1 h1{
+      font-size: 75px;
+      width: 70%;
+      margin: auto;
+      background-image: url("./assests/wirelessstereobg.jpg");
+      background-clip: text;
+      color: rgba(240, 241, 242, 0.693);
+      margin-top: 10%;
+      background-position: center;
+      background-size: cover;
+    }
+    .intro1 p{
+      font-weight: bolder;
+      width: 70%;
+      margin: auto;
+      background: url("./assests/wirelessstereobg.jpg");
+      background-clip: text;
+      color: rgba(240, 241, 242, 0.693);
+      background-position: center;
+      background-size: cover;
+    }
+
+    
+    
+    .product-container1, .product-container2, .product-container3, .product-container4{
+      margin: auto;
+      margin-top: 5%;
+      display: grid;
+      grid-template-columns: 1fr 1fr  ;
+      height: 5%;
+      column-gap: 10px;
+      row-gap: 20px;
+      width: 90vw;
+      min-height: 100vh;
+      padding: 10px;
+    }
+    /* each item design */
+    .item{
+      min-height: 250px;
+      max-height: fit-content;
+      display: grid;
+      grid-template-columns: 49% 49%;
+      gap: 5px;
+      padding: 5px;
+      position: relative;
+      border-radius:10px ;
+    }
+
+    .item:hover{
+      box-shadow: 9px 9px 20px -4px rgba(0,0,0,0.58);
+      -webkit-box-shadow: 9px 9px 20px -4px rgba(0,0,0,0.58);
+      -moz-box-shadow: 9px 9px 20px -4px rgba(0,0,0,0.58);
+            }
+            
+    .purchasediv{
+      position: absolute;
+      z-index: 1;
+      background: rgba(35, 34, 34, 0.803);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px ;
+      display: none;
+      
+    }
+
+    .purchasediv-btn-group{
+      display: block;
+      width: 50%;
+      height: fit-content;
+      padding: 10px;
+      margin: auto;
+    }
+    .purchasediv-btn-group button{
+      display: block;
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 20px;
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+      border-radius: 10px;
+      width: 100%;
+      position: relative;
+      margin-top: 50px;
+    }
+    .purchasediv-btn-group button:hover{
+      color: black;
+      border: 2px solid transparent;
+      background: white;
+    }
+
+    
+    .item>button{
+      position: absolute;
+      top: 3%;
+      left: 88%;
+      z-index: 20;
+      width: fit-content;
+      height: fit-content;
+      background: transparent;
+      border: 0px;
+    }
+    .item>button img{
+      width: 40px;
+      height: 40px;
+      z-index: 2;
+    }
+    
+    .item-img, .item-context{
+      height: 100%;
+      width: 100%;
+      padding-bottom: 5px;
+      position: relative;
+      overflow: hidden;
+    }
+    .item-img img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .item-img p{
+      width: 100%;
+      text-align: center;
+      text-wrap: nowrap;
+      background: rgba(227, 227, 6, 0.873);
+      color: white;
+      margin-top: 0%;
+      border-top: 2px solid white;
+      position: absolute;
+      top: 92.5%;
+      border-radius: 0px 0px 10px 10px;
+    }
+
+    .item-context{
+      height: 98%;
+      text-wrap: nowrap;
+    }
+    .detail1{
+      display: flex;
+      width: 95%;
+      height: 10%;
+      margin: 1px 0px 0px 1px;
+      padding-left: 10px;
+    }
+    .detail1 p{
+      margin-left: 5px;
+      margin-right: 15px;
+      position: relative;
+      font-size: 20px;
+      top: -15%;
+    }
+
+    .detail2 p{
+      padding: 5px;
+      border-radius: 10px;
+      background-color: rgb(134, 202, 247);
+      width: fit-content;
+      margin: 5px;
+    }
+
+    .discountedprice{
+      margin-right: 5px;
+      font-size: 40px;
+    }
+    .actualprice{
+      color: #5f5f5fa6;
+      text-decoration: line-through;
+      margin-right: 5px;
+    }
+    .offerpercentage{
+      color: green;
+    }
+
+    .intro2{
+      margin-top: 20px;
+      width: 99vw;
+      height: 100vh;
+      background-image: url("./assests/bg1.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .intro2 h1{
+      font-size: 105px;
+      text-align: center;
+      color: transparent;
+      -webkit-text-stroke: 1px white;
+    }
+    .intro2 h1:nth-child(1){
+      animation-name: fromleft1;
+      animation-timeline: view(10px);
+      animation-timeline: onview(-100px);
+    }
+    .intro2 h1:nth-child(2){
+      animation-name: fromright1;
+      animation-timeline: view(-100px);
+      transition: all var(--movementtime);
+    }
+    .intro2 h1:nth-child(3){
+      animation-name: fromleft1;
+       animation-duration:var(--movementtime);
+       transition: all var(--movementtime);
+       animation-timeline: view(-10px);
+    }
+    .intro2 h1:nth-child(4){
+      animation-name: fromright1;
+       animation-duration:var(--movementtime);
+       transition: all var(--movementtime);
+       animation-timeline: view(-100px);
+    }
+
+    @keyframes fromright1 {
+      0%{
+        transform: translateX(-100%);
+      }
+      50%{
+        transform: translateX(0%);
+      }
+      
+    }
+
+    @keyframes fromleft1 {
+      0%{
+        transform: translateX(100%);
+      }
+      50%{
+        transform: translateX(0%);
+      }
+      
+    }
+
+    .intro3{
+      margin-top: 20px;
+      text-align: end;
+      background-image: url("./assests/wiredheadsetbg.jpg");
+      width: 99vw;
+      height: 100vh;
+      background-position: center;
+      background-size: cover;
+    }
+    .intro3>h1{
+      text-align: center;
+      width: fit-content;
+      margin: auto;
+      font-size: 70px;
+      overflow: hidden;
+      max-width: fit-content;
+    }
+    .intro3>p{
+      text-align: center;
+      width: fit-content;
+      margin: auto;
+      width: 400px;
+      overflow: hidden;
+    }
+    /* intro 4 */
+    .intro4{
+      margin-top: 20px;
+      text-align: end;
+      background-image: url("./assests/gamingbg.jpg");
+      width: 99vw;
+      height: 100vh;
+      background-position: center;
+      background-size: cover;
+      overflow: auto;
+    }
+
+    .intro4 h1{
+      font-size: 150px;
+      text-align: center;
+      margin-top: 60px;
+      color: rgba(175, 177, 181, 0.926);
+      filter: drop-shadow(2px 2px 2px 2px black);
+    }
+    .intro4 h1>span:nth-child(1){
+      display: inline-block;
+      animation-name: updown;
+      animation-duration: 1s;
+      animation-delay: 0s; 
+      animation-iteration-count: infinite;
+    }
+    .intro4 h1>span:nth-child(2){
+      display: inline-block;
+      animation-name: updown;
+      animation-duration: 1s;
+      animation-delay: .5s;
+      animation-iteration-count: infinite;
+    }
+    .intro4 h1>span:nth-child(3){
+      display: inline-block;
+      animation-name: updown;
+      animation-duration: 1s;
+      animation-delay: 1s;
+      animation-iteration-count: infinite;
+    }
+    .intro4 h1>span:nth-child(4){
+      display: inline-block;
+      animation-name: updown;
+      animation-duration: 1s;
+      animation-delay: 1.5s;
+      animation-iteration-count: infinite;
+    }
+    .intro4 h1>span:nth-child(5){
+      display: inline-block;
+      animation-name: updown;
+      animation-duration: 1s;
+      animation-delay: 2s;
+      animation-iteration-count: infinite;
+    }
+    .intro4 h1>span:nth-child(6){
+      display: inline-block;
+      animation-name: updown;
+      animation-duration: 1s;
+      animation-delay: 2.5s;
+      animation-iteration-count: infinite;
+    }
+    .intro4 h1>span:nth-child(7){
+      display: inline-block;
+      animation-name: updown;
+      animation-duration: 1s;
+      animation-delay: 3s;
+      animation-iteration-count: infinite;
+    }
+    .intro4 h1>span:nth-child(8){
+      display: inline-block;
+      animation-name: updown;
+      animation-duration: 1s;
+      animation-delay: 3.5s;
+      animation-iteration-count: infinite;
+    }
+    .intro4 h1>span:nth-child(9){
+      display: inline-block;
+      animation-name: updown;
+      animation-duration: 1s;
+      animation-delay: 4s;
+      animation-iteration-count: infinite;
+    }
+    .intro4 h1>span:nth-child(10){
+      display: inline-block;
+      animation-name: updown;
+      animation-duration: 1s;
+      animation-delay: 4.5s;
+      animation-iteration-count: infinite;
+    }
+    .intro4 h1>span:nth-child(11){
+      display: inline-block;
+      animation-name: updown;
+      animation-duration: 1s;
+      animation-delay: 5s;
+      animation-iteration-count: infinite;
+    }
+    .intro4 h1>span:nth-child(12){
+      display: inline-block;
+      animation-name: updown;
+      animation-duration: 1s;
+      animation-delay: 5.5s;
+      animation-iteration-count: infinite;
+    }
+    .intro4 h1>span:nth-child(13){
+      display: inline-block;
+      animation-name: updown;
+      animation-duration: 1s;
+      animation-delay: 6s;
+      animation-iteration-count: infinite;
+    }
+    .intro4 h1>span:nth-child(14){
+      display: inline-block;
+      animation-name: updown;
+      animation-duration: 1s;
+      animation-delay: 6.5s;
+      animation-iteration-count: infinite;
+    }
+    .intro4 h1>span:nth-child(15){
+      display: inline-block;
+      animation-name: updown;
+      animation-duration: 1s;
+      animation-delay: 7s;
+      animation-iteration-count: infinite;
+    }
+    .intro4 h1>span:nth-child(16){
+      display: inline-block;
+      animation-name: updown;
+      animation-duration: 1s;
+      animation-delay: 7.5s;
+      animation-iteration-count: infinite;
+    }
+    .intro4 h1>span:nth-child(17){
+      display: inline-block;
+      animation-name: updown;
+      animation-duration: 1s;
+      animation-delay: 8s;
+      animation-iteration-count: infinite;
+    }
+
+    .intro4 p{
+      text-align: center;
+      color: rgba(175, 177, 181, 0.926);
+    }
+
+    @keyframes updown {
+      0%{
+        transform: translateY(0px);
+      }
+      50%{
+        transform: translateY(10px);
+      }
+      100%{
+        transform: translateY(0px);
+      }
+    }
+    .footer{
+      width: 99vw;
+      height: 10vh;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      background: #878585cc;
+    }
+}
